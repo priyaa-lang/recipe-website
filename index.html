@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colorful Recipe World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Recipe World</h1>
+    <input type="text" id="search" placeholder="Search your favorite dish..." onkeyup="searchDish()">
+  </header>
+
+ <main id="dish-list">
+  <div class="card">
+    <a href="pasta.html">
+      <img src="pasta.jpg" alt="Pasta">
+      <h2>Pasta</h2>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="cake.html">
+      <img src="cake.jpg" alt="Cake">
+      <h2>Cake</h2>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="pizza.html">
+      <img src="pizza.jpg" alt="Pizza">
+      <h2>Pizza</h2>
+    </a>
+  </div>
+
+  <div class="card">
+    <a href="biryani.html">
+      <img src="biryani.jpg" alt="Biryani">
+      <h2>Biryani</h2>
+    </a>
+  </div>
+</main>
+
+  <script>
+    function searchDish() {
+      const input = document.getElementById('search').value.toLowerCase();
+      const dishes = document.querySelectorAll('.card');
+      dishes.forEach(dish => {
+        const name = dish.textContent.toLowerCase();
+        dish.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
